@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ro6m2ag0ctu"]
+
+[ext_resource type="Script" path="res://head_drop_target.gd" id="1_eh40h"]
+[ext_resource type="Texture2D" uid="uid://cq81ijxk2jone" path="res://Asset/Roboku/HeadHole - Blue.png" id="2_y6nsg"]
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 287.0
+offset_bottom = 224.0
+expand_mode = 1
+script = ExtResource("1_eh40h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 287.0
+offset_bottom = 224.0
+mouse_filter = 2
+texture = ExtResource("2_y6nsg")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
