@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://blfc8tem5u3s6"]
+[gd_scene load_steps=3 format=3 uid="uid://b21o4046nfle2"]
 
-[ext_resource type="PackedScene" uid="uid://d0ro6m2ag0ctu" path="res://Head.tscn" id="1_jjqwn"]
+[ext_resource type="PackedScene" path="res://Head.tscn" id="1_jjqwn"]
 [ext_resource type="Texture2D" uid="uid://cf2fpecnc2o6l" path="res://Asset/Roboku/Head - Blue.png" id="2_rkjms"]
 
 [node name="test" type="Node2D"]

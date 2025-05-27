@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyx78ysnsvw6d"]
+[gd_scene load_steps=14 format=3 uid="uid://cyx78ysnsvw6d"]
 
-[ext_resource type="Shader" path="res://scroll.gdshader" id="1_cqinr"]
-[ext_resource type="Texture2D" uid="uid://cg65q864upwb" path="res://Pattern.png" id="2_u0g2h"]
-[ext_resource type="PackedScene" uid="uid://d0ro6m2ag0ctu" path="res://Head.tscn" id="3_5odac"]
-[ext_resource type="PackedScene" uid="uid://d3d2c08602vhi" path="res://Head - Drop.tscn" id="4_668g3"]
+[ext_resource type="Texture2D" uid="uid://c6va05j13lqc1" path="res://Asset/Background/background.png" id="1_wwt4b"]
+[ext_resource type="Texture2D" uid="uid://cq81ijxk2jone" path="res://Asset/Roboku/HeadHole - Blue.png" id="4_5c6fg"]
+[ext_resource type="Texture2D" uid="uid://0ydq1ku5d70q" path="res://Asset/Roboku/LegHole.png" id="4_r3jou"]
+[ext_resource type="Texture2D" uid="uid://dm8ufk1e3x6hg" path="res://Asset/Roboku/BodyHole - Blue.png" id="4_ycp7d"]
+[ext_resource type="Texture2D" uid="uid://xx1fckfu4ypb" path="res://Asset/Roboku/ArmHole - Blue.png" id="5_c63lj"]
 [ext_resource type="Texture2D" uid="uid://cf2fpecnc2o6l" path="res://Asset/Roboku/Head - Blue.png" id="5_qv36q"]
-[ext_resource type="Texture2D" uid="uid://bd3vkwgg3q1rt" path="res://Asset/Roboku/Head - Gold.png" id="6_7unfe"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j4ynm"]
-shader = ExtResource("1_cqinr")
-shader_parameter/speed = 0.1
+[ext_resource type="Texture2D" uid="uid://dhgw6lmmjijhf" path="res://Asset/Roboku/LegRight - Blue.png" id="6_0xnb1"]
+[ext_resource type="PackedScene" uid="uid://deu8hiet6v7ca" path="res://Hole.tscn" id="6_0ydh1"]
+[ext_resource type="Texture2D" uid="uid://qraxspgjyy6q" path="res://Asset/Roboku/LegLeft - Blue.png" id="6_ljmor"]
+[ext_resource type="Texture2D" uid="uid://baevjyt02aept" path="res://Asset/Roboku/Body - Blue.png" id="7_7en0h"]
+[ext_resource type="PackedScene" uid="uid://1wwg06b5wgq5" path="res://Object.tscn" id="7_jo5hq"]
+[ext_resource type="Texture2D" uid="uid://64k48d64wot1" path="res://Asset/Roboku/ArmLeft - Blue.png" id="9_fejl0"]
+[ext_resource type="Texture2D" uid="uid://cdkt3kj4duj6u" path="res://Asset/Roboku/ArmRight - Blue.png" id="10_f0g3d"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -30,7 +33,6 @@ color = Color(0.137255, 0.439216, 0.94902, 1)
 
 [node name="Pattern" type="TextureRect" parent="."]
 texture_repeat = 2
-material = SubResource("ShaderMaterial_j4ynm")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,28 +45,127 @@ offset_right = 578.0
 offset_bottom = 328.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_u0g2h")
-stretch_mode = 1
+texture = ExtResource("1_wwt4b")
+expand_mode = 2
 
-[node name="Place_Holder" parent="." instance=ExtResource("3_5odac")]
+[node name="Leg  - Hole" parent="." instance=ExtResource("6_0ydh1")]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 90.0
-offset_right = 401.0
-offset_bottom = 314.0
+offset_left = 338.0
+offset_top = 402.0
+offset_right = 536.0
+offset_bottom = 738.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_r3jou")
+expand_mode = 0
 
-[node name="Head" parent="." instance=ExtResource("4_668g3")]
+[node name="Leg" parent="." instance=ExtResource("7_jo5hq")]
 layout_mode = 0
-offset_left = 731.0
-offset_top = 15.0
-offset_right = 1018.0
-offset_bottom = 239.0
+offset_left = 556.0
+offset_top = 458.0
+offset_right = 754.0
+offset_bottom = 794.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_0xnb1")
+expand_mode = 0
+
+[node name="Leg  - Hole2" parent="." instance=ExtResource("6_0ydh1")]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 402.0
+offset_right = 381.0
+offset_bottom = 738.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_r3jou")
+expand_mode = 0
+flip_h = true
+
+[node name="Leg2" parent="." instance=ExtResource("7_jo5hq")]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 363.0
+offset_right = 811.0
+offset_bottom = 699.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ljmor")
+expand_mode = 0
+
+[node name="Arm  - Hole" parent="." instance=ExtResource("6_0ydh1")]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 256.0
+offset_right = 612.0
+offset_bottom = 574.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_c63lj")
+expand_mode = 0
+
+[node name="Arm" parent="." instance=ExtResource("7_jo5hq")]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 375.0
+offset_right = 1218.0
+offset_bottom = 693.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_f0g3d")
+expand_mode = 0
+
+[node name="Arm  - Hole2" parent="." instance=ExtResource("6_0ydh1")]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 256.0
+offset_right = 392.0
+offset_bottom = 574.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_c63lj")
+expand_mode = 0
+flip_h = true
+
+[node name="Arm2" parent="." instance=ExtResource("7_jo5hq")]
+layout_mode = 0
+offset_left = 1027.0
+offset_top = 461.0
+offset_right = 1281.0
+offset_bottom = 779.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_fejl0")
+expand_mode = 0
+
+[node name="Head - Hole" parent="." instance=ExtResource("6_0ydh1")]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 25.0
+offset_right = 764.0
+offset_bottom = 500.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_5c6fg")
+expand_mode = 0
+
+[node name="Head" parent="." instance=ExtResource("7_jo5hq")]
+layout_mode = 0
+offset_left = 671.0
+offset_top = 346.0
+offset_right = 1279.0
+offset_bottom = 821.0
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_qv36q")
+expand_mode = 0
 
-[node name="Head2" parent="." instance=ExtResource("4_668g3")]
+[node name="Body  - Hole" parent="." instance=ExtResource("6_0ydh1")]
 layout_mode = 0
-offset_left = 706.0
-offset_top = 347.0
-offset_right = 993.0
-offset_bottom = 571.0
-texture = ExtResource("6_7unfe")
+offset_left = 220.0
+offset_top = 256.0
+offset_right = 522.0
+offset_bottom = 574.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_ycp7d")
+expand_mode = 0
+
+[node name="Body" parent="." instance=ExtResource("7_jo5hq")]
+layout_mode = 0
+offset_left = 869.0
+offset_top = 458.0
+offset_right = 1171.0
+offset_bottom = 776.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_7en0h")
+expand_mode = 0
