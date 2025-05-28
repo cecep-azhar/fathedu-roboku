@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dev5ng71prvy3"]
+
+[ext_resource type="PackedScene" uid="uid://cls6gpnn34sdb" path="res://Scenes/drop_zone.tscn" id="1_faand"]
+[ext_resource type="Texture2D" uid="uid://c6va05j13lqc1" path="res://Asset/Background/background.png" id="1_kdxpy"]
+[ext_resource type="PackedScene" uid="uid://dnb7wk54hee8b" path="res://Scenes/draggable.tscn" id="2_1ryol"]
+[ext_resource type="PackedScene" uid="uid://cq36e11v3md75" path="res://Scenes/platform.tscn" id="2_d5rdo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.533333, 0.558333)
+texture = ExtResource("1_kdxpy")
+centered = false
+
+[node name="Node2D" parent="." instance=ExtResource("2_d5rdo")]
+position = Vector2(512, 520)
+
+[node name="drop_zone" parent="." instance=ExtResource("1_faand")]
+position = Vector2(216, 136)
+
+[node name="drop_zone2" parent="." instance=ExtResource("1_faand")]
+position = Vector2(216, 304)
+
+[node name="Head" parent="." instance=ExtResource("2_1ryol")]
+position = Vector2(832, 200)
+
+[node name="Body" parent="." instance=ExtResource("2_1ryol")]
+position = Vector2(616, 480)

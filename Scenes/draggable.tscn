@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnb7wk54hee8b"]
+
+[ext_resource type="Script" path="res://dragdrop.gd" id="1_cqwnt"]
+[ext_resource type="Texture2D" uid="uid://cf2fpecnc2o6l" path="res://Asset/Roboku/Head - Blue.png" id="2_7wnxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpndf"]
+size = Vector2(604, 476)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cqwnt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7wnxm")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_kpndf")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
