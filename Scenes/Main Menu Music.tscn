@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://2u40lpv8frjn"]
+
+[ext_resource type="AudioStream" uid="uid://che4fg7alim7f" path="res://Asset/Music/game-music-teste-204327.mp3" id="1_7g3jp"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_7g3jp")
+autoplay = true

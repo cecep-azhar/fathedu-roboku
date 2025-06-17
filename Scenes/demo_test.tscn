@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dev5ng71prvy3"]
+[gd_scene load_steps=8 format=3 uid="uid://dev5ng71prvy3"]
 
 [ext_resource type="PackedScene" uid="uid://cls6gpnn34sdb" path="res://Scenes/drop_zone.tscn" id="1_faand"]
 [ext_resource type="Texture2D" uid="uid://c6va05j13lqc1" path="res://Asset/Background/background.png" id="1_kdxpy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cq36e11v3md75" path="res://Scenes/platform.tscn" id="2_d5rdo"]
 [ext_resource type="Texture2D" uid="uid://cf2fpecnc2o6l" path="res://Asset/Roboku/Head - Blue.png" id="5_gh88d"]
 [ext_resource type="Texture2D" uid="uid://baevjyt02aept" path="res://Asset/Roboku/Body - Blue.png" id="6_cg1is"]
+[ext_resource type="AudioStream" uid="uid://5exim8v1p83k" path="res://Asset/Music/roblox-minecraft-fortnite-video-game-music-358426.mp3" id="7_4yd7j"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -37,3 +38,7 @@ position = Vector2(832, 392)
 position = Vector2(0, -16)
 scale = Vector2(0.505263, 0.505263)
 texture = ExtResource("5_gh88d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_4yd7j")
+autoplay = true

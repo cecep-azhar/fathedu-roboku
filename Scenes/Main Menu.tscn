@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://culvt6yaxm1t1"]
+[gd_scene load_steps=6 format=3 uid="uid://culvt6yaxm1t1"]
 
 [ext_resource type="Shader" path="res://scroll.gdshader" id="1_mhfih"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_vrg6a"]
 [ext_resource type="Texture2D" uid="uid://dahdpvbv7v1gu" path="res://Asset/Background/Pattern.png" id="2_7hc5f"]
+[ext_resource type="AudioStream" uid="uid://che4fg7alim7f" path="res://Asset/Music/game-music-teste-204327.mp3" id="4_y1f2h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_75ryx"]
 shader = ExtResource("1_mhfih")
@@ -62,6 +63,10 @@ text = "Start"
 layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_y1f2h")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
