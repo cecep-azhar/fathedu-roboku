@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=3 uid="uid://dev5ng71prvy3"]
+
+[ext_resource type="Texture2D" uid="uid://c6va05j13lqc1" path="res://Asset/Background/background.png" id="1_3rahi"]
+[ext_resource type="Script" path="res://Scenes/main_game.gd" id="1_jdt8k"]
+[ext_resource type="PackedScene" uid="uid://cls6gpnn34sdb" path="res://Scenes/drop_zone.tscn" id="3_jg3vp"]
+[ext_resource type="PackedScene" uid="uid://dnb7wk54hee8b" path="res://Scenes/draggable.tscn" id="4_iu6nn"]
+[ext_resource type="Texture2D" uid="uid://baevjyt02aept" path="res://Asset/Roboku/Body - Blue.png" id="5_likv8"]
+[ext_resource type="Texture2D" uid="uid://cdkt3kj4duj6u" path="res://Asset/Roboku/ArmRight - Blue.png" id="6_dqi2i"]
+[ext_resource type="Texture2D" uid="uid://cf2fpecnc2o6l" path="res://Asset/Roboku/Head - Blue.png" id="6_o6rhs"]
+[ext_resource type="Texture2D" uid="uid://qraxspgjyy6q" path="res://Asset/Roboku/LegLeft - Blue.png" id="7_hahst"]
+[ext_resource type="AudioStream" uid="uid://5exim8v1p83k" path="res://Asset/Music/roblox-minecraft-fortnite-video-game-music-358426.mp3" id="7_ml752"]
+[ext_resource type="Texture2D" uid="uid://64k48d64wot1" path="res://Asset/Roboku/ArmLeft - Blue.png" id="7_wxudj"]
+[ext_resource type="Texture2D" uid="uid://dhgw6lmmjijhf" path="res://Asset/Roboku/LegRight - Blue.png" id="8_a3k0j"]
+[ext_resource type="Texture2D" uid="uid://cu3pn5f5x27v4" path="res://Asset/menu.png" id="11_vukmf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jdt8k")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.5625, 0.635185)
+texture = ExtResource("1_3rahi")
+centered = false
+
+[node name="drop_zone" parent="." instance=ExtResource("3_jg3vp")]
+position = Vector2(181, 180)
+
+[node name="drop_zone2" parent="." instance=ExtResource("3_jg3vp")]
+position = Vector2(181, 356)
+
+[node name="drop_zone3" parent="." instance=ExtResource("3_jg3vp")]
+position = Vector2(77, 372)
+
+[node name="drop_zone4" parent="." instance=ExtResource("3_jg3vp")]
+position = Vector2(283, 372)
+
+[node name="drop_zone5" parent="." instance=ExtResource("3_jg3vp")]
+position = Vector2(243, 506)
+
+[node name="drop_zone6" parent="." instance=ExtResource("3_jg3vp")]
+position = Vector2(123, 506)
+
+[node name="Arm_left" parent="." instance=ExtResource("4_iu6nn")]
+position = Vector2(920, 128)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arm_left"]
+position = Vector2(0, -16)
+scale = Vector2(0.505263, 0.505263)
+texture = ExtResource("7_wxudj")
+
+[node name="Arm_right" parent="." instance=ExtResource("4_iu6nn")]
+position = Vector2(388, 575)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arm_right"]
+position = Vector2(0, -16)
+scale = Vector2(0.505263, 0.505263)
+texture = ExtResource("6_dqi2i")
+
+[node name="leg_left" parent="." instance=ExtResource("4_iu6nn")]
+position = Vector2(536, 304)
+
+[node name="Sprite2D2" type="Sprite2D" parent="leg_left"]
+position = Vector2(0, -16)
+scale = Vector2(0.505263, 0.505263)
+texture = ExtResource("7_hahst")
+
+[node name="leg_right" parent="." instance=ExtResource("4_iu6nn")]
+position = Vector2(777, 310)
+
+[node name="Sprite2D2" type="Sprite2D" parent="leg_right"]
+position = Vector2(0, -16)
+scale = Vector2(0.505263, 0.505263)
+texture = ExtResource("8_a3k0j")
+
+[node name="Body" parent="." instance=ExtResource("4_iu6nn")]
+position = Vector2(592, 504)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Body"]
+scale = Vector2(0.505263, 0.505263)
+texture = ExtResource("5_likv8")
+
+[node name="Head" parent="." instance=ExtResource("4_iu6nn")]
+position = Vector2(899, 527)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Head"]
+position = Vector2(0, -16)
+scale = Vector2(0.505263, 0.505263)
+texture = ExtResource("6_o6rhs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ml752")
+autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 65.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_default_cursor_shape = 2
+alignment = 1
+
+[node name="Main Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+icon = ExtResource("11_vukmf")
+
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
